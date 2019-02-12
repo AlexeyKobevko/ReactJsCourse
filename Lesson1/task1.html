@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1</title>
+</head>
+<body>
+
+
+<script>
+/*
+Написать функцию loop, которая будет принимать параметры: times (значение по
+умолчанию = 0), callback (значение по умолчанию = null) и будет в цикле (times раз),
+вызывать функцию callback. Если функцию не передана, то цикл не должен
+отрабатывать ни разу. Покажите применение этой функции
+*/
+
+    let loop = (times = 0, callback = 0) => {
+        if (typeof callback != 'function') {
+            alert('Закройте дверь, дует!');
+            return false;
+        } else {
+            for (let i = 0; i < parseInt(times); i++) {
+                callback();
+            }
+        }
+        return true;
+    };
+
+    let comeIn = () => {
+        return console.log('Входите пожалуйста');
+    };
+
+    loop(3, comeIn);
+    loop();
+    loop(4,6);
+
+</script>
+</body>
+</html>

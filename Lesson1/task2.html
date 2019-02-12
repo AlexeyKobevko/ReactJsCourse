@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2</title>
+</head>
+<body>
+
+<script>
+
+    /*
+    Написать функцию calculateArea, которая будет принимать параметры, для
+    вычисления площади (можете выбрать какую то конкретную фигуру, а можете,
+    основываясь на переданных параметрах, выполнять требуемый алгоритм
+    вычисления площади для переданной в параметрах фигуры) и возвращать объект
+    вида: { area, figure, input }, где area - вычисленная площадь, figure - название фигуры,
+    для которой вычислялась площадь, input - входные параметры, по которым было
+    произведено вычисление.
+     */
+
+    /*
+    square - квадрат
+    rectangle - прямоугольник
+    circle - окружность
+    triangle - треугольник
+    trapezium - трапеция
+     */
+
+    let calculateArea = (figure, a, b = 0, h = 0) => {
+        let result = 0,
+            answer;
+        if (figure === 'square') {
+            result = Math.pow(a, 2);
+            answer = {area: result, figure: 'square', input: a};
+        } else if (figure === 'rectangle') {
+            result = a * b;
+            answer = {area: result, figure: 'rectangle', input: [a, b]};
+        } else if (figure === 'circle') {
+            const pi = 3.14;
+            result = Math.pow(a, 2) * pi;
+            answer = {area: result, figure: 'circle', input: a};
+        } else if (figure === 'triangle') {
+            result = a / 2 * b;
+            answer = {area: result, figure: 'triangle', input: [a, b]};
+        } else if (figure === 'trapezium') {
+            result = (a + b) / 2 * h;
+            answer = {area: result, figure: 'trapezium', input: [a, b, h]};
+        }
+        return answer;
+    };
+
+    console.log(calculateArea('square', 5));
+    console.log(calculateArea('rectangle', 5, 2));
+    console.log(calculateArea('circle', 5));
+    console.log(calculateArea('triangle', 5, 2));
+    console.log(calculateArea('trapezium', 5, 3, 2));
+
+</script>
+</body>
+</html>
