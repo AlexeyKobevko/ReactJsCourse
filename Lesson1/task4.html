@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 4</title>
+</head>
+<body>
+
+<script>
+
+    function* generateSequence() {
+        let questions = [
+            'Сколько будет 2 * 2?',
+            'Сколько ножек у сороконожки?',
+            'Почему в радуге нет чёрного цвета?'
+        ],
+            result = {};
+        for (let i = 0; i < questions.length; i++) {
+            result[`${questions[i]}`] = prompt(`${questions[i]}`);
+        }
+        yield result;
+        return result;
+    }
+
+    let question = generateSequence();
+    console.log(question.next().value);
+
+
+</script>
+</body>
+</html>
